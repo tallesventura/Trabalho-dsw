@@ -11,6 +11,11 @@ img {
 
 }
 
+div {
+	
+	margin: 0;
+}
+
 .inl-block {
     display: inline-block;
 }
@@ -24,7 +29,7 @@ img {
 }
 
 .caixa-paciente,
-.foto-paciente,
+.caixa-foto,
 .menu-paciente {
     display: inline-block;
 }
@@ -34,14 +39,11 @@ img {
     border-style: outset;
     border-width: 2px;
     border-color: gray;
-    padding-top: 5px;
-    padding-bottom: 5px;
 }
 
 .caixa-paciente {
     background-color: #e6e6e6;
-    padding-right: 5px;
-    padding-left: 15px;
+    padding: 5px;
     margin-left: 7px;
     margin-right: 7px;
     width: 30%;
@@ -50,7 +52,8 @@ img {
 
 .caixa-mensagens {
     width: 100%,
-
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .remetente {
@@ -58,17 +61,11 @@ img {
 }
 
 .menu-paciente {
-    width: 60%;
+    width: 70%;
 }
 
-.imagem {
-    height:
-}
-
-.foto-paciente {
-    width: 30%;
+.caixa-foto {
+    width: 25%;
     padding: 0px;
-    margin-right: 0;
-    margin-left: auto;
 }
 

@@ -1,5 +1,5 @@
 
-<?php include "../templates/header.php" ?>
+<?php include "templates/header.php" ?>
 
 <!-- Cabeçalho -->
 <div>
@@ -50,9 +50,9 @@
     </div>
 
     <!-- Pacientes -->
-    <div style="margin: auto;">
-        <?php include "../templates/template_paciente.php" ?>
+    <div>
+        <?php include "templates/template_paciente.php" ?>
     </div>
 </div>
 
-<?php include "../templates/footer.php" ?>
+<?php include "templates/footer.php" ?>

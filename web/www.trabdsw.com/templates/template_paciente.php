@@ -25,7 +25,7 @@
                 </div>
             </div>
             <!-- foto -->
-            <div class="foto-paciente">
+            <div class="caixa-foto">
                 <img src="<?php echo $paciente['foto'] ?>" alt="Foto do paciente">
             </div>
         </div>
