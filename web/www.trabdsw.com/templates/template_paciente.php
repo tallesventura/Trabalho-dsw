@@ -10,7 +10,7 @@
     <!-- Paciente -->
     <div class="caixa-paciente">
         <!-- cabeçalho -->
-        <div class="cabecalho">
+        <div class="cabecalho caixa-flex">
             <!-- menu -->
             <div class="menu-paciente">
                 <!-- nome -->
@@ -25,8 +25,8 @@
                 </div>
             </div>
             <!-- foto -->
-            <div class="caixa-foto">
-                <img class="foto-paciente" src="<?php echo $paciente['foto'] ?>" alt="Foto do paciente">
+            <div class="caixa-foto caixa-flex">
+                <img id="foto-paciente" src="<?php echo $paciente['foto'] ?>" alt="Foto do paciente">
             </div>
         </div>
         <!-- corpo -->

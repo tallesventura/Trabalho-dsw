@@ -3,27 +3,27 @@
 
 <!-- Cabeçalho -->
 <div>
-    <div>
+    <div id="mensagem-cabecalho">
         <p> Desenvolvimento de Sistemas para WEB - Programar para aprender a programar </p>
     </div>
-    <div>
-        <div>
+    <div class="caixa-flex">
+        <div id="caixa-pesquisa" class="caixa-flex">
             <label>Pesquisar por paciente: </label>
             <input type="text" name="txtPesquisa">
-            <button> <img src="http://placehold.it/15x15" alt="Pesquisar"> </button>
+            <button id="btn-pesquisar"> <img src="http://placehold.it/15x15" alt="Pesquisar"> </button>
         </div>
-        <div>
-            <button> <img src="http://placehold.it/15x15" alt="Sair"> </button>
+        <div id="caixa-sair" class="caixa-flex">
+            <button id="btn-sair"> <img src="http://placehold.it/15x15" alt="Sair"> </button>
         </div>
     </div>
-    <div>
-        <p>Domingo, 14 de Maio de 2017</p>
-        <img src="http://placehold.it/20x20" alt="Calendário">
+    <div id="caixa-data" class="caixa-flex">
+        Domingo, 14 de Maio de 2017
+        <img id="calendario" src="http://placehold.it/20x20" alt="Calendário">
     </div>
 </div>
 
 <!-- Corpo -->
-<div>
+<div id="caixa-corpo">
     <!-- Caixa de mensagens -->
     <div>
         <!-- Cabeçalho -->
@@ -50,7 +50,7 @@
     </div>
 
     <!-- Pacientes -->
-    <div>
+    <div class="caixa-flex">
         <?php include "templates/template_paciente.php" ?>
     </div>
 </div>

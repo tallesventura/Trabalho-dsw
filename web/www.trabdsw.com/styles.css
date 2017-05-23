@@ -5,15 +5,18 @@ body {
     padding-right: 15px;
 }
 
-
-
 div {
-	outline: red solid 1px;
+	/* outline: red solid 1px; */
 	margin: 0;
 }
 
 .inl-block {
     display: inline-block;
+}
+
+.caixa-flex {
+	display: flex;
+	padding: 5px;
 }
 
 .inl {
@@ -25,8 +28,9 @@ div {
 }
 
 .caixa-paciente,
-.caixa-foto,
-.menu-paciente {
+.menu-paciente,
+#caixa-sair 
+#caixa-pesquisa {
     display: inline-block;
 }
 
@@ -40,9 +44,10 @@ div {
 .caixa-paciente {
     background-color: #e6e6e6;
     padding: 5px;
-    margin-left: 7px;
-    margin-right: 7px;
-    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    width: 31%;
     font-weight: bold;
 }
 
@@ -58,18 +63,51 @@ div {
 
 .menu-paciente {
 	position: relative;
-    width: 70%;
-    top: -5px;
+    width: 80%;
 }
 
 .caixa-foto {
 	position: relative;
-	right: -15px;
-    width: 25%;
+    width: 20%;
     padding: 0px;
 }
 
-.foto-paciente {
-	position: relative;
-    right: -39px;
+#foto-paciente {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#mensagem-cabecalho {
+	text-align: center;
+}
+
+#caixa-pesquisa {
+	width: 95%;
+	align-items: center;
+}
+
+#caixa-sair {
+	width: 5%;
+}
+
+#btn-sair {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#btn-pesquisar {
+	margin-left: 5px;
+}
+
+#calendario {
+	align-self: center;
+	margin-left: 10px;
+}
+
+#caixa-corpo {
+	box-shadow: 0 -3px 5px 0px grey;
+}
+
+#caixa-data {
+	margin-bottom: 5px;
 }
