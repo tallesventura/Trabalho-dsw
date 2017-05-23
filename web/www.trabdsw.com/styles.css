@@ -5,14 +5,10 @@ body {
     padding-right: 15px;
 }
 
-img {
-    display: block;
-    margin: auto;
 
-}
 
 div {
-	
+	outline: red solid 1px;
 	margin: 0;
 }
 
@@ -61,11 +57,19 @@ div {
 }
 
 .menu-paciente {
+	position: relative;
     width: 70%;
+    top: -5px;
 }
 
 .caixa-foto {
+	position: relative;
+	right: -15px;
     width: 25%;
     padding: 0px;
 }
 
+.foto-paciente {
+	position: relative;
+    right: -39px;
+}

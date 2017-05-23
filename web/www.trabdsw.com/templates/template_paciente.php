@@ -1,9 +1,9 @@
 
 <?php
     $pacientes = array(
-                        array("nome"=>"Talles", "foto"=>"http://placehold.it/100x100"),
-                        array("nome"=>"Fulano", "foto"=>"http://placehold.it/100x100"),
-                        array("nome"=>"Ciclano", "foto"=>"http://placehold.it/100x100"));
+                        array("nome"=>"Talles", "foto"=>"http://placehold.it/75x75"),
+                        array("nome"=>"Fulano", "foto"=>"http://placehold.it/75x75"),
+                        array("nome"=>"Ciclano", "foto"=>"http://placehold.it/75x75"));
 ?>
 
 <?php foreach($pacientes as $paciente): ?>
@@ -26,12 +26,15 @@
             </div>
             <!-- foto -->
             <div class="caixa-foto">
-                <img src="<?php echo $paciente['foto'] ?>" alt="Foto do paciente">
+                <img class="foto-paciente" src="<?php echo $paciente['foto'] ?>" alt="Foto do paciente">
             </div>
         </div>
         <!-- corpo -->
         <div>
             <p>Dados: <br> </p>
+            <div>
+                
+            </div>
         </div>
     </div>
 
