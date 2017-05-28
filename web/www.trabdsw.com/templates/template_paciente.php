@@ -10,7 +10,7 @@ $pacientes = array(
         <!-- Paciente -->
         <div class="caixa-paciente">
             <!-- cabeçalho -->
-            <div id="cabecalho-paciente" class="caixa-flex">
+            <div id="cabecalho-paciente">
                 <!-- menu -->
                 <div class="menu-paciente">
                     <!-- nome -->
@@ -19,13 +19,13 @@ $pacientes = array(
                     </div>
                     <!-- ações -->
                     <div>
-                        <button> <img src="http://placehold.it/15x15" alt="botão 1"> </button>
-                        <button> <img src="http://placehold.it/15x15" alt="botão 2"> </button>
-                        <button> <img src="http://placehold.it/15x15" alt="botão 3"> </button>
+                        <button class="btn-paciente"> <img src="http://placehold.it/15x15" alt="botão 1"> </button>
+                        <button class="btn-paciente"> <img src="http://placehold.it/15x15" alt="botão 2"> </button>
+                        <button class="btn-paciente"> <img src="http://placehold.it/15x15" alt="botão 3"> </button>
                     </div>
                 </div>
                 <!-- foto -->
-                <div class="caixa-foto caixa-flex">
+                <div class="caixa-foto>
                     <img id="foto-paciente" src="<?php echo $paciente['foto'] ?>" alt="Foto do paciente">
                 </div>
             </div>

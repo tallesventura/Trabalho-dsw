@@ -6,17 +6,17 @@
     <div id="mensagem-cabecalho">
         <p> Desenvolvimento de Sistemas para WEB - Programar para aprender a programar </p>
     </div>
-    <div id="cabecalho-pesquisa" class="caixa-flex">
+    <div id="cabecalho-pesquisa">
         <div id="caixa-pesquisa">
             <label>Pesquisar por paciente: </label>
-            <input type="text" name="txtPesquisa">
+            <input id="input-paciente" type="text" name="nomePaciente">
             <button id="btn-pesquisar"> <img src="http://placehold.it/15x15" alt="Pesquisar"> </button>
         </div>
         <div id="caixa-sair">
             <button id="btn-sair"> <img src="http://placehold.it/15x15" alt="Sair"> </button>
         </div>
     </div>
-    <div id="caixa-data" class="caixa-flex">
+    <div id="caixa-data">
         Domingo, 14 de Maio de 2017
         <img id="calendario" src="http://placehold.it/20x20" alt="Calendário">
     </div>

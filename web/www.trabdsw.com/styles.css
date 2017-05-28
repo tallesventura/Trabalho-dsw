@@ -30,13 +30,8 @@ div {
     box-sizing: border-box;
 }
 
-.inl-block {
-    display: inline-block;
-}
-
 .caixa-flex {
 	display: flex;
-	padding: 5px;
 }
 
 .cabecalho {
@@ -85,9 +80,14 @@ div {
 }
 
 .caixa-foto {
+    display: flex;
 	position: relative;
     width: 20%;
     padding: 0px;
+}
+
+.btn-paciente {
+    background-color: #CCCBC6;
 }
 
 #foto-paciente {
@@ -111,13 +111,24 @@ div {
 	flex-basis: 5%;
 }
 
+#cabecalho-pesquisa {
+    display: flex;
+    padding-left: 5px;
+}
+
 #btn-sair {
 	margin-left: auto;
 	margin-right: auto;
+    background-color: #A9B7C0;
 }
 
 #btn-pesquisar {
 	margin-left: 5px;
+    background-color: #A9B7C0;
+}
+
+#input-paciente {
+    margin-left: 5px;
 }
 
 #calendario {
@@ -132,13 +143,18 @@ div {
 }
 
 #caixa-data {
+    display: flex;
+    padding: 5px;
+    margin-top: 10px;
 	margin-bottom: 5px;
 }
 
 #cabecalho-paciente {
-    /*background-color: #6D7993;*/
+    display: flex;
+    /*background-color: #A9B7C0;*/
 }
 
 #corpo-paciente {
     /*background-color: #D5D5D5;*/
+    margin-top: 10px;
 }
