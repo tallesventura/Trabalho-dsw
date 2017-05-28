@@ -2,17 +2,17 @@
 <?php include "templates/header.php" ?>
 
 <!-- Cabeçalho -->
-<div>
+<div class="cabecalho">
     <div id="mensagem-cabecalho">
         <p> Desenvolvimento de Sistemas para WEB - Programar para aprender a programar </p>
     </div>
-    <div class="caixa-flex">
-        <div id="caixa-pesquisa" class="caixa-flex">
+    <div id="cabecalho-pesquisa" class="caixa-flex">
+        <div id="caixa-pesquisa">
             <label>Pesquisar por paciente: </label>
             <input type="text" name="txtPesquisa">
             <button id="btn-pesquisar"> <img src="http://placehold.it/15x15" alt="Pesquisar"> </button>
         </div>
-        <div id="caixa-sair" class="caixa-flex">
+        <div id="caixa-sair">
             <button id="btn-sair"> <img src="http://placehold.it/15x15" alt="Sair"> </button>
         </div>
     </div>
@@ -23,7 +23,7 @@
 </div>
 
 <!-- Corpo -->
-<div id="caixa-corpo">
+<div id="corpo">
     <!-- Caixa de mensagens -->
     <div>
         <!-- Cabeçalho -->

@@ -1,13 +1,33 @@
+/*
+TEMAS:
+
+06 - Muted and Minimal (https://designschool.canva.com/blog/website-color-schemes/)
+    DUSTY: #96858F;
+    LAVENDAR: #6D7993;
+    OVERCAST: #9099A2;
+    PAPER: #D5D5D5;
+
+32 - Modern and Muted (https://designschool.canva.com/blog/website-color-schemes/)
+    GREY BLUE: #A9B7C0;
+    MINTY: #C7D8C6;
+    LIGHT: #EFD9C1;
+    POWDER: #CCCBC6;
+
+*/
+
+
 
 body {
     margin: 0;
     padding-left: 15px;
     padding-right: 15px;
+    /*background-color: #0099cc;*/
 }
 
 div {
-	/* outline: red solid 1px; */
+	 /*outline: red solid 1px;*/
 	margin: 0;
+    box-sizing: border-box;
 }
 
 .inl-block {
@@ -19,17 +39,14 @@ div {
 	padding: 5px;
 }
 
-.inl {
-    display: inline;
-}
-
 .cabecalho {
-    margin: auto;
+    background-color: #6D7993;
+    color: white;
 }
 
 .caixa-paciente,
 .menu-paciente,
-#caixa-sair 
+#caixa-sair
 #caixa-pesquisa {
     display: inline-block;
 }
@@ -42,13 +59,14 @@ div {
 }
 
 .caixa-paciente {
-    background-color: #e6e6e6;
+    background-color: #D5D5D5;
     padding: 5px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
-    width: 31%;
+    flex-basis: 30%;
     font-weight: bold;
+    color: black;
 }
 
 .caixa-mensagens {
@@ -79,15 +97,18 @@ div {
 
 #mensagem-cabecalho {
 	text-align: center;
+
 }
 
 #caixa-pesquisa {
-	width: 95%;
+    display: flex;
+	flex-basis: 95%;
 	align-items: center;
 }
 
 #caixa-sair {
-	width: 5%;
+    display: flex;
+	flex-basis: 5%;
 }
 
 #btn-sair {
@@ -104,10 +125,20 @@ div {
 	margin-left: 10px;
 }
 
-#caixa-corpo {
+#corpo {
 	box-shadow: 0 -3px 5px 0px grey;
+    background-color: #9099A2;
+    color: white;
 }
 
 #caixa-data {
 	margin-bottom: 5px;
+}
+
+#cabecalho-paciente {
+    /*background-color: #6D7993;*/
+}
+
+#corpo-paciente {
+    /*background-color: #D5D5D5;*/
 }
