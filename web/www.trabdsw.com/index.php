@@ -1,58 +1,107 @@
 
 <?php include "templates/header.php" ?>
 
-<!-- Cabeçalho -->
+<?php
+$pacientes = array(
+    array("nome"=>"Talles", "foto"=>"http://via.placeholder.com/75x75"),
+    array("nome"=>"Fulano", "foto"=>"http://via.placeholder.com/75x75"),
+    array("nome"=>"Ciclano", "foto"=>"http://via.placeholder.com/75x75"),
+    array("nome"=>"Josiclano", "foto"=>"http://via.placeholder.com/75x75"),
+    array("nome"=>"João", "foto"=>"http://via.placeholder.com/75x75"),
+    array("nome"=>"José", "foto"=>"http://via.placeholder.com/75x75"));
+    ?>
+
+
 <div class="cabecalho">
-    <div id="mensagem-cabecalho">
-        <p> Desenvolvimento de Sistemas para WEB - Programar para aprender a programar </p>
-    </div>
-    <div id="cabecalho-pesquisa">
-        <div id="caixa-pesquisa">
-            <label>Pesquisar por paciente: </label>
-            <input id="input-paciente" type="text" name="nomePaciente">
-            <button id="btn-pesquisar"> <img src="http://placehold.it/15x15" alt="Pesquisar"> </button>
-        </div>
-        <div id="caixa-sair">
-            <button id="btn-sair"> <img src="http://placehold.it/15x15" alt="Sair"> </button>
-        </div>
-    </div>
-    <div id="caixa-data">
-        Domingo, 14 de Maio de 2017
-        <img id="calendario" src="http://placehold.it/20x20" alt="Calendário">
+    <div class="lin caixa-titulo">
+        <p id="titulo">Sistema de gerenciamento de pacientes</p>
     </div>
 </div>
 
-<!-- Corpo -->
-<div id="corpo">
-    <!-- Caixa de mensagens -->
-    <div>
-        <!-- Cabeçalho -->
-        <div>
-            <img src="http://placehold.it/20x20" alt="Caixa de mensagens">
-            <p> Mensagens </p>
+<div class="barra-nav">
+    <ul>
+        <li><a href="#">Página inicial</a></li>
+        <li><a href="#">Cadastrar pacientes</a></li>
+        <li style="float:right"><a href="#">Sair</a></li>
+    </ul>
+</div>
+
+<div id="corpo-pagina">
+
+    <!-- <div id="coluna-msg">
+        <div class="cabecalho-caixa-msg">
+            <img src="http://via.placeholder.com/25x25">
+            Mensagens
         </div>
-        <!-- Lista de mensagens -->
-        <div>
-            <!-- for num mensagens -->
-            <!-- Mensagem individual -->
-            <div>
-                <!-- ícone da mensagem (lida ou não lida) -->
-                <div>
-                    <img src="http://placehold.it/30x30" alt="Ícone mensagem">
-                </div>
-                <!-- corpo da mensagem -->
-                <div>
-                    <p>Talles</p>
-                    <p>aaaaaaa</p>
+
+
+        <?php foreach($mensagens as $mensagem): ?>
+            <div class="corpo-caixa-msg">
+                <div class="mensagem">
+                    <div class="caixa-icone-msg">
+                        <img class="icone-msg" src="http://via.placeholder.com/90x20">
+                    </div>
+                    <div class="corpo-msg">
+                        <div class="remetente">
+                            <?php echo $mensagem['remetente'] ?>
+                        </div>
+                        <div class="conteudo-msg">
+                            <p>Estou escrevendo por escrever</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+        <?php endforeach; ?>
+    </div> -->
+
+    <div id="barra-lateral">
+
+        <div id="cabecalho-barra-lateral">
+            <p>Bem vindo, Fulano.</p>
+            <p id="data">Quinta-feira, 1 de Junho de 2017</p>
+        </div>
+        <div id="caixa-pesquisa">
+            <label for="nomePaciente">Pesquisar:</label>
+            <input id="nomePaciente" type="text" name="nomePaciente" placeholder="Nome do Paciente">
+            <input id="icone-buscar" type="image" src="imagens/buscar.svg" alt="Pesquisar">
         </div>
     </div>
 
-    <!-- Pacientes -->
-    <div class="caixa-flex">
-        <?php include "templates/template_paciente.php" ?>
+    <div id="coluna-pacientes">
+        <?php foreach($pacientes as $paciente): ?>
+            <!-- Paciente -->
+            <div class="caixa-paciente">
+                <!-- cabeçalho -->
+                <div class="cabecalho-paciente">
+                    <!-- menu -->
+                    <div class="menu-paciente">
+                        <!-- nome -->
+                        <div class="caixa-nome-paciente">
+                            <label> <?php echo $paciente["nome"]; ?> </label>
+                        </div>
+                        <!-- ações -->
+                        <div class="barra-acoes-paciente">
+                            <button class="btn-paciente"> <img src="imagens/editar.svg" alt="Editar"></button>
+                            <button class="btn-paciente"> <img src="imagens/remover.svg" alt="Excluir"></button>
+                        </div>
+                    </div>
+                    <!-- foto -->
+                    <div>
+                        <img class="foto-paciente" src="<?php echo $paciente['foto'] ?>" alt="Foto do paciente">
+                    </div>
+                </div>
+                <!-- corpo -->
+                <div class="corpo-paciente">
+                    <label>Telefone:</label><br>
+                    <label>Endereço:</label><br>
+                    <label>Email:</label><br>
+                    <label>Observações:</label><br>
+                </div>
+            </div>
+
+        <?php endforeach; ?>
     </div>
+
 </div>
 
 <?php include "templates/footer.php" ?>
