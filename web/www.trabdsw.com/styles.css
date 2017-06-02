@@ -1,6 +1,12 @@
 /*
 TEMAS:
 
+04 - Modern and Clean (https://designschool.canva.com/blog/website-color-schemes/)
+    TANGERINE: #E37222;
+    TEAL: #07889B;
+    POWDER: #66B9BF;
+    TAN: #EEAA7B;
+
 06 - Muted and Minimal (https://designschool.canva.com/blog/website-color-schemes/)
     DUSTY: #96858F;
     LAVENDAR: #6D7993;
@@ -19,142 +25,183 @@ TEMAS:
 
 body {
     margin: 0;
-    padding-left: 15px;
-    padding-right: 15px;
     /*background-color: #0099cc;*/
 }
 
 div {
 	 /*outline: red solid 1px;*/
-	margin: 0;
     box-sizing: border-box;
 }
 
-.caixa-flex {
-	display: flex;
+.barra-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
 }
 
-.cabecalho {
-    background-color: #6D7993;
+.barra-nav li {
+    float: left;
+    border-right: 1px solid #bbb;
+}
+
+.barra-nav li:last-child {
+    border-right: none;
+}
+
+.barra-nav li a {
+    display: block;
     color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
 
-.caixa-paciente,
-.menu-paciente,
-#caixa-sair
-#caixa-pesquisa {
-    display: inline-block;
+.barra-nav li a:hover {
+    background-color: #111;
 }
 
-.caixa-paciente,
-.caixa-mensagens {
-    border-style: outset;
-    border-width: 2px;
-    border-color: gray;
+/* linha */
+.lin {
+    display: flex;
+    margin: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+
 }
 
 .caixa-paciente {
-    background-color: #D5D5D5;
-    padding: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
     flex-basis: 30%;
-    font-weight: bold;
-    color: black;
-}
-
-.caixa-mensagens {
-    width: 100%,
+    padding-left: 15px;
+    padding-right: 15px;
     padding-top: 5px;
     padding-bottom: 5px;
 }
 
-.remetente {
-    font-weight: bold;
+.caixa-titulo {
+    justify-content: center;
+    background-color: #C7D8C6;
 }
 
-.menu-paciente {
-	position: relative;
-    width: 80%;
-}
-
-.caixa-foto {
-    display: flex;
-	position: relative;
-    width: 20%;
-    padding: 0px;
-}
-
-.btn-paciente {
-    background-color: #CCCBC6;
-}
-
-#foto-paciente {
-	margin-right: auto;
-	margin-left: auto;
-}
-
-#mensagem-cabecalho {
-	text-align: center;
-
-}
-
-#caixa-pesquisa {
-    display: flex;
-	flex-basis: 95%;
-	align-items: center;
-}
-
-#caixa-sair {
-    display: flex;
-	flex-basis: 5%;
-}
-
-#cabecalho-pesquisa {
-    display: flex;
-    padding-left: 5px;
-}
-
-#btn-sair {
-	margin-left: auto;
-	margin-right: auto;
-    background-color: #A9B7C0;
-}
-
-#btn-pesquisar {
-	margin-left: 5px;
-    background-color: #A9B7C0;
-}
-
-#input-paciente {
-    margin-left: 5px;
-}
-
-#calendario {
-	align-self: center;
-	margin-left: 10px;
-}
-
-#corpo {
-	box-shadow: 0 -3px 5px 0px grey;
-    background-color: #9099A2;
-    color: white;
-}
-
-#caixa-data {
-    display: flex;
+.caixa-paciente {
+    flex-basis: 30%;
+    height: 300px;
     padding: 5px;
-    margin-top: 10px;
-	margin-bottom: 5px;
+    margin-top: 6px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    color: black;
+    background-color: #A9B7C0;
+    border-radius: 9px;
+    box-shadow: 3px 3px 5px;
 }
 
-#cabecalho-paciente {
+.caixa-paciente:hover {
+    transform: scale(1.1,1.1);
+}
+
+.cabecalho-paciente {
     display: flex;
     /*background-color: #A9B7C0;*/
 }
 
-#corpo-paciente {
+.menu-paciente {
+    flex-basis: 80%;
+    position: relative;
+}
+
+.barra-acoes-paciente {
+    position: absolute;
+    bottom: 5px;
+}
+
+.caixa-nome-paciente {
+    position: absolute;
+    top: 5px;
+}
+
+.foto-paciente {
+    height: 75;
+    width: 75;
+    margin-left: auto;
+}
+
+.corpo-paciente {
     /*background-color: #D5D5D5;*/
+    margin-top: 15px;
+    padding: 5px 5px;
+}
+
+.btn-paciente {
+    display: inline;
+    background-color: inherit;
+}
+
+.btn-paciente:hover {
+    background-color: #9099A2;
+}
+
+.btn-paciente img{
+    height: 25px;
+    width: 30px;
+}
+
+
+#corpo-pagina {
+    display: flex;
+}
+
+#coluna-msg {
+    order: 1;
+    flex-basis: 25%;
+    height: 100%;
+    overflow: auto;
+    background-color: #a6a6a6;
+}
+
+#coluna-pacientes {
+    display: flex;
+    order: 2;
+    flex-wrap: wrap;
+    flex-basis: 75%;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background-color: #CCCBC6;
+}
+
+#barra-lateral {
+    order: 1;
+    flex-basis: 25%;
+    padding-right: 15px;
+    padding-left: 15px;
+    background-color: #EFD9C1;
+}
+
+#caixa-pesquisa {
+    display: flex;
+    align-items: center;
     margin-top: 10px;
 }
+
+#caixa-pesquisa input {
+    margin-left: 5px;
+}
+
+#cabecalho-barra-lateral {
+}
+
+#titulo {
+    font-weight: bold;
+    font-size: 16;
+}
+
+#btn-sair {
+    margin-left: auto;
+}
+
+#icone-buscar {
+    height: 25px;
+    width: 25px;
+}
+
