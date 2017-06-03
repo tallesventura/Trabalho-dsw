@@ -38,7 +38,8 @@ div {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    /*background-color: #E37222;*/
+    background-color: #07889B;
 }
 
 .barra-nav li {
@@ -59,7 +60,7 @@ div {
 }
 
 .barra-nav li a:hover {
-    background-color: #111;
+    background-color: #09aac3;
 }
 
 /* linha */
@@ -81,7 +82,8 @@ div {
 
 .caixa-titulo {
     justify-content: center;
-    background-color: #C7D8C6;
+    background-color: #66B9BF;
+    color: white;
 }
 
 .caixa-paciente {
@@ -91,8 +93,8 @@ div {
     margin-top: 6px;
     margin-bottom: 25px;
     font-weight: bold;
-    color: black;
-    background-color: #A9B7C0;
+    color: #07889B;
+    background-color: #D5D5D5;
     border-radius: 9px;
     box-shadow: 3px 3px 5px;
 }
@@ -135,7 +137,8 @@ div {
 
 .btn-paciente {
     display: inline;
-    background-color: inherit;
+    background-color: #A9B7C0;
+    border-radius: 9px;
 }
 
 .btn-paciente:hover {
@@ -152,22 +155,15 @@ div {
     display: flex;
 }
 
-#coluna-msg {
-    order: 1;
-    flex-basis: 25%;
-    height: 100%;
-    overflow: auto;
-    background-color: #a6a6a6;
-}
-
 #coluna-pacientes {
     display: flex;
     order: 2;
     flex-wrap: wrap;
     flex-basis: 75%;
     justify-content: space-between;
-    padding: 10px 15px;
-    background-color: #CCCBC6;
+    padding: 15px 20px;
+    /*background-color: #07889B;*/
+    background-color: #66B9BF;
 }
 
 #barra-lateral {
@@ -175,7 +171,9 @@ div {
     flex-basis: 25%;
     padding-right: 15px;
     padding-left: 15px;
-    background-color: #EFD9C1;
+    background-color: #66B9BF;
+    color: white;
+    border-right: 1px solid gray;
 }
 
 #caixa-pesquisa {
