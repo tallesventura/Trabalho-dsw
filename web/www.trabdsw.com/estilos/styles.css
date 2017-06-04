@@ -1,0 +1,197 @@
+/*
+TEMAS:
+
+04 - Modern and Clean (https://designschool.canva.com/blog/website-color-schemes/)
+    TANGERINE: #E37222;
+    TEAL: #07889B;
+    POWDER: #66B9BF;
+    TAN: #EEAA7B;
+
+06 - Muted and Minimal (https://designschool.canva.com/blog/website-color-schemes/)
+    DUSTY: #96858F;
+    LAVENDAR: #6D7993;
+    OVERCAST: #9099A2;
+    PAPER: #D5D5D5;
+
+32 - Modern and Muted (https://designschool.canva.com/blog/website-color-schemes/)
+    GREY BLUE: #A9B7C0;
+    MINTY: #C7D8C6;
+    LIGHT: #EFD9C1;
+    POWDER: #CCCBC6;
+
+*/
+
+
+
+body {
+    margin: 0;
+}
+
+div {
+	 /*outline: red solid 1px;*/
+    box-sizing: border-box;
+}
+
+.barra-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #07889B;
+}
+
+.barra-nav li {
+    float: left;
+    border-right: 1px solid #bbb;
+}
+
+.barra-nav li:last-child {
+    border-right: none;
+}
+
+.barra-nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.barra-nav li a:hover {
+    background-color: #09aac3;
+}
+
+/* linha */
+.lin {
+    display: flex;
+    margin: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+
+.caixa-paciente {
+    flex-basis: 30%;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.caixa-titulo {
+    justify-content: center;
+    background-color: #449ca2;
+    color: white;
+}
+
+.caixa-paciente {
+    flex-basis: 30%;
+    height: 300px;
+    padding: 5px;
+    margin-top: 6px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    color: #07889B;
+    background-color: #D5D5D5;
+    border-radius: 9px;
+    box-shadow: 3px 3px 5px;
+}
+
+.caixa-paciente:hover {
+    transform: scale(1.1,1.1);
+}
+
+.cabecalho-paciente {
+    display: flex;
+}
+
+.menu-paciente {
+    flex-basis: 80%;
+    position: relative;
+}
+
+.barra-acoes-paciente {
+    position: absolute;
+    bottom: 5px;
+}
+
+.caixa-nome-paciente {
+    position: absolute;
+    top: 5px;
+}
+
+.foto-paciente {
+    height: 75;
+    width: 75;
+    margin-left: auto;
+}
+
+.corpo-paciente {
+    margin-top: 15px;
+    padding: 5px 5px;
+}
+
+.btn-paciente {
+    display: inline;
+    background-color: #A9B7C0;
+    border-radius: 9px;
+}
+
+.btn-paciente:hover {
+    background-color: #9099A2;
+}
+
+.btn-paciente img{
+    height: 25px;
+    width: 30px;
+}
+
+
+#corpo-pagina {
+    display: flex;
+}
+
+#coluna-pacientes {
+    display: flex;
+    order: 2;
+    flex-wrap: wrap;
+    flex-basis: 75%;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background-color: #66B9BF;
+}
+
+#barra-lateral {
+    order: 1;
+    flex-basis: 25%;
+    padding-right: 15px;
+    padding-left: 15px;
+    background-color: #66B9BF;
+    color: white;
+    border-right: 1px solid gray;
+}
+
+#caixa-pesquisa {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#caixa-pesquisa input {
+    margin-left: 5px;
+}
+
+#titulo {
+    font-weight: bold;
+    font-size: 16;
+}
+
+#btn-sair {
+    margin-left: auto;
+}
+
+#icone-buscar {
+    height: 25px;
+    width: 25px;
+}
+
