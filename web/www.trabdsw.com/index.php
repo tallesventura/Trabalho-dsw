@@ -20,39 +20,13 @@ $pacientes = array(
 
 <div class="barra-nav">
     <ul>
-        <li><a href="#">Página inicial</a></li>
-        <li><a href="#">Cadastrar pacientes</a></li>
+        <li><a href="index.php">Página inicial</a></li>
+        <li><a href="pacientes/cadastro-pacientes.html">Cadastrar pacientes</a></li>
         <li style="float:right"><a href="#">Sair</a></li>
     </ul>
 </div>
 
 <div id="corpo-pagina">
-
-    <!-- <div id="coluna-msg">
-        <div class="cabecalho-caixa-msg">
-            <img src="http://via.placeholder.com/25x25">
-            Mensagens
-        </div>
-
-
-        <?php foreach($mensagens as $mensagem): ?>
-            <div class="corpo-caixa-msg">
-                <div class="mensagem">
-                    <div class="caixa-icone-msg">
-                        <img class="icone-msg" src="http://via.placeholder.com/90x20">
-                    </div>
-                    <div class="corpo-msg">
-                        <div class="remetente">
-                            <?php echo $mensagem['remetente'] ?>
-                        </div>
-                        <div class="conteudo-msg">
-                            <p>Estou escrevendo por escrever</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <?php endforeach; ?>
-    </div> -->
 
     <div id="barra-lateral">
 
