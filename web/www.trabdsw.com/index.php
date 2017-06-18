@@ -2,37 +2,6 @@
 
     include_once 'config.php';
     include_once 'constructor.php';
-    include_once 'login_controller.php';
-
-    // recebendo os valores do POST de forma correta (PHP 5.4 ou superior)
-    // Tipos: INPUT_GET, INPUT_POST, INPUT_COOKIE, INPUT_SERVER, INPUT_ENV,
-    // Poém, o INPUT_SESSION e o INPUT_REQUEST ainda não foram implementados.
-    $login = filter_input(INPUT_POST, 'login', FILTER_SANITIZE_SPECIAL_CHARS);
-    $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS);
-
-    // removendo caracteres especiais para evitar SQL Injection
-    $login = htmlspecialchars( str_replace( "'", "", str_replace('"', '', $login) ) , ENT_QUOTES );
-    $senha = htmlspecialchars( str_replace( "'", "", str_replace('"', '', $senha) ) , ENT_QUOTES );
-
-    if ($login != "" && $senha != "")
-    {
-
-        $remember = false;
-        if(isset($_POST['remember'])){
-            $remember = true;
-        }
-
-        $session = LoginController::getInstance();
-        $session->login($login, $senha, $remember, false);
-        if ($session->isLogged())
-        {
-            Header('location: pacientes/home-pacientes.php');
-        }
-        else
-        {
-            Header('location: index.php');
-        }
-    }
 
 ?>
 
