@@ -17,7 +17,6 @@ if(!isset($_SESSION['user_name'])){
         if($sql){
             $u = mysqli_fetch_array($sql);
             if(count($u) > 0){
-                //echo $auth_key;
                 $_SESSION['user_id'] = $u['id'];
                 $_SESSION['user_name'] = $u['nome'];
             }else{

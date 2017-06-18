@@ -15,7 +15,6 @@
         if($sql){
 
             while ($u = mysqli_fetch_array($sql)) {
-                //echo $auth_key;
                 $_SESSION['user_id'] = $u['id'];
                 $_SESSION['user_name'] = $u['nome'];
 
