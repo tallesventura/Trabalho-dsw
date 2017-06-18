@@ -2,13 +2,7 @@
 <?php
 
 include_once '../constructor.php';
-
-session_start();
-if(!isset($_SESSION['user_name'])){
-    header('location: ../index.php');
-    exit;
-}
-
+require '../login/verifica_sessao.php';
 $pacientes = array(
     array("nome"=>"Talles", "foto"=>"http://via.placeholder.com/75x75"),
     array("nome"=>"Fulano", "foto"=>"http://via.placeholder.com/75x75"),
@@ -25,6 +19,20 @@ $pacientes = array(
     $c->addJavaScript('../libs/jquery/jquery-3.2.1.min.js');
     $c->addCSS('../libs/css/normalize.css');
     $c->addCSS('../estilos/styles.css');
+
+    $c->addExtra(
+        "<script type='text/javascript'>
+            $(function(){
+                $('#sair').click(function(){
+                    $.get('../login/deslogar.php',function(data){
+                        window.location.replace('../index.php');
+                    });
+
+                })
+            })
+        </script>"
+    );
+
     echo Constructor::getInstance()->getHead();
 ?>
 
@@ -37,9 +45,9 @@ $pacientes = array(
 
     <div class="barra-nav">
         <ul>
-            <li><a href="index.php">Página inicial</a></li>
+            <li><a href="home-pacientes.php">Página inicial</a></li>
             <li><a href="cadastro-pacientes.php">Cadastrar pacientes</a></li>
-            <li style="float:right"><a href="#">Sair</a></li>
+            <li id="sair" style="float:right"><a href="#">Sair</a></li>
         </ul>
     </div>
 

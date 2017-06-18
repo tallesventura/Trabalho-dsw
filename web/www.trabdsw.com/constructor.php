@@ -43,9 +43,9 @@ class Constructor
         return '<head>'             ."\n".
                 $this->getCharset() ."\n".
                 $this->getTitle()   ."\n".
-                $this->getExtra()   ."\n".
                 $this->getJavaScript()."\n".
                 $this->getCSS()       ."\n".
+                $this->getExtra()   ."\n".
                "</head>\n";
     }
 

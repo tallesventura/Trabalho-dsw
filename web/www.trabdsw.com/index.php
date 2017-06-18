@@ -3,6 +3,28 @@
     include_once 'config.php';
     include_once 'constructor.php';
 
+    session_start();
+    if(isset($_COOKIE['auth_key'])){
+        $key = $_COOKIE['auth_key'];
+
+        $con = mysqli_connect(  DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME );
+        $query = "SELECT id, nome FROM usuarios WHERE auth_key = '". $key."' LIMIT 1";
+        $sql = mysqli_query($con, $query);
+        mysqli_close($con);
+
+        if($sql){
+
+            while ($u = mysqli_fetch_array($sql)) {
+                //echo $auth_key;
+                $_SESSION['user_id'] = $u['id'];
+                $_SESSION['user_name'] = $u['nome'];
+
+                header("location: ". ROOTDIR. "pacientes/home-pacientes.php");
+                exit;
+            }
+        }
+    }
+
 ?>
 
 <html>

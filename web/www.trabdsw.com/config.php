@@ -9,4 +9,7 @@ define('DB_NAME'     , 'trabdsw');
 // LOCATION
 define('CHARSET'     , 'UTF-8');
 
+// BASE DIR INSIDE
+define('ROOTDIR'     , '/Trabalho%20DSW/web/www.trabdsw.com/');
+
 ?>

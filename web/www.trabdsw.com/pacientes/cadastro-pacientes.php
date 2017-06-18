@@ -1,10 +1,6 @@
 
 <?php
-session_start();
-  if(!isset($_SESSION['user_name'])){
-    header('location: ../index.php');
-    exit;
-}
+require '../login/verifica_sessao.php'
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -23,6 +19,17 @@ session_start();
            background-image: url();
        }
    </style>
+
+   <script type="text/javascript" src="../libs/jquery/jquery-3.2.1.min.js"></script>
+   <script type="text/javascript">
+      $(function(){
+        $('#sair').click(function(){
+          $.get('../login/deslogar.php',function(data){
+            window.location.replace('../index.php');
+          });
+        })
+      })
+   </script>
 </head>
 
 <body>
@@ -37,7 +44,7 @@ session_start();
         <ul>
             <li><a href="home-pacientes.php">Página inicial</a></li>
             <li><a href="cadastro-pacientes.php">Cadastrar pacientes</a></li>
-            <li style="float:right"><a href="#">Sair</a></li>
+            <li id="sair" style="float:right"><a href="#">Sair</a></li>
         </ul>
     </div>
 
