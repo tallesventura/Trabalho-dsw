@@ -1,7 +1,15 @@
 
+<?php
+session_start();
+  if(!isset($_SESSION['user_name'])){
+    header('location: ../index.php');
+    exit;
+}
+?>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 
     <title>Paciente</title>
@@ -27,8 +35,8 @@
 
     <div class="barra-nav">
         <ul>
-            <li><a href="../index.php">Página inicial</a></li>
-            <li><a href="cadastro-pacientes.html">Cadastrar pacientes</a></li>
+            <li><a href="home-pacientes.php">Página inicial</a></li>
+            <li><a href="cadastro-pacientes.php">Cadastrar pacientes</a></li>
             <li style="float:right"><a href="#">Sair</a></li>
         </ul>
     </div>

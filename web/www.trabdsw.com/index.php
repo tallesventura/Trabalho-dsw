@@ -1,81 +1,74 @@
+<?php
 
-<?php include "templates/header.php" ?>
+    include_once 'config.php';
+    include_once 'constructor.php';
+    include_once 'login_controller.php';
+
+    // recebendo os valores do POST de forma correta (PHP 5.4 ou superior)
+    // Tipos: INPUT_GET, INPUT_POST, INPUT_COOKIE, INPUT_SERVER, INPUT_ENV,
+    // Poém, o INPUT_SESSION e o INPUT_REQUEST ainda não foram implementados.
+    $login = filter_input(INPUT_POST, 'login', FILTER_SANITIZE_SPECIAL_CHARS);
+    $senha = filter_input(INPUT_POST, 'senha', FILTER_SANITIZE_SPECIAL_CHARS);
+
+    // removendo caracteres especiais para evitar SQL Injection
+    $login = htmlspecialchars( str_replace( "'", "", str_replace('"', '', $login) ) , ENT_QUOTES );
+    $senha = htmlspecialchars( str_replace( "'", "", str_replace('"', '', $senha) ) , ENT_QUOTES );
+
+    if ($login != "" && $senha != "")
+    {
+
+        $remember = false;
+        if(isset($_POST['remember'])){
+            $remember = true;
+        }
+
+        $session = LoginController::getInstance();
+        $session->login($login, $senha, $remember, false);
+        if ($session->isLogged())
+        {
+            Header('location: pacientes/home-pacientes.php');
+        }
+        else
+        {
+            Header('location: index.php');
+        }
+    }
+
+?>
+
+<html>
 
 <?php
-$pacientes = array(
-    array("nome"=>"Talles", "foto"=>"http://via.placeholder.com/75x75"),
-    array("nome"=>"Fulano", "foto"=>"http://via.placeholder.com/75x75"),
-    array("nome"=>"Ciclano", "foto"=>"http://via.placeholder.com/75x75"),
-    array("nome"=>"Josiclano", "foto"=>"http://via.placeholder.com/75x75"),
-    array("nome"=>"João", "foto"=>"http://via.placeholder.com/75x75"),
-    array("nome"=>"José", "foto"=>"http://via.placeholder.com/75x75"));
-    ?>
+    $c = Constructor::getInstance();
+    $c->setTitle("Login");
+    $c->addJavaScript('libs/jquery/jquery-3.2.1.min.js');
+    $c->resetCSS();
+    $c->addCSS('libs/css/normalize.css');
+    $c->addCSS('estilos/styles.css');
+    echo Constructor::getInstance()->getHead();
+?>
 
-
-<div class="cabecalho">
-    <div class="lin caixa-titulo">
-        <p id="titulo">Sistema de gerenciamento de pacientes</p>
+<body>
+<div id="caixa-login">
+    <div id="cabecalho-login">
+        <label>Login</label>
     </div>
-</div>
-
-<div class="barra-nav">
-    <ul>
-        <li><a href="index.php">Página inicial</a></li>
-        <li><a href="pacientes/cadastro-pacientes.html">Cadastrar pacientes</a></li>
-        <li style="float:right"><a href="#">Sair</a></li>
-    </ul>
-</div>
-
-<div id="corpo-pagina">
-
-    <div id="barra-lateral">
-
-        <div id="cabecalho-barra-lateral">
-            <p>Bem vindo, Fulano.</p>
-            <p id="data">Quinta-feira, 1 de Junho de 2017</p>
+    <form method="POST" action="login/login.php">
+        <div id="caixa-usuario">
+            <label for="usuario">Usuario</label>
+            <input id="usuario" type="text" name="usuario" placeholder="Usuario">
         </div>
-        <div id="caixa-pesquisa">
-            <label for="nomePaciente">Pesquisar:</label>
-            <input id="nomePaciente" type="text" name="nomePaciente" placeholder="Nome do Paciente">
-            <input id="icone-buscar" type="image" src="imagens/buscar.svg" alt="Pesquisar">
+        <div id="caixa-senha">
+            <label for="senha">Senha</label>
+            <input id="senha" type="password" name="senha" placeholder="Senha">
         </div>
-    </div>
-
-    <div id="coluna-pacientes">
-        <?php foreach($pacientes as $paciente): ?>
-            <!-- Paciente -->
-            <div class="caixa-paciente">
-                <!-- cabeçalho -->
-                <div class="cabecalho-paciente">
-                    <!-- menu -->
-                    <div class="menu-paciente">
-                        <!-- nome -->
-                        <div class="caixa-nome-paciente">
-                            <label> <?php echo $paciente["nome"]; ?> </label>
-                        </div>
-                        <!-- ações -->
-                        <div class="barra-acoes-paciente">
-                            <button class="btn-paciente"> <img src="imagens/editar.svg" alt="Editar"></button>
-                            <button class="btn-paciente"> <img src="imagens/remover.svg" alt="Excluir"></button>
-                        </div>
-                    </div>
-                    <!-- foto -->
-                    <div>
-                        <img class="foto-paciente" src="<?php echo $paciente['foto'] ?>" alt="Foto do paciente">
-                    </div>
-                </div>
-                <!-- corpo -->
-                <div class="corpo-paciente">
-                    <label>Telefone:</label><br>
-                    <label>Endereço:</label><br>
-                    <label>Email:</label><br>
-                    <label>Observações:</label><br>
-                </div>
-            </div>
-
-        <?php endforeach; ?>
-    </div>
-
+        <div id="caixa-remember">
+            <input id="remember" type="checkbox" name="remember" value="remember">
+            <label>Manter-se conectado</label>
+        </div>
+        <input type="submit" name="enviar">
+    </form>
 </div>
 
-<?php include "templates/footer.php" ?>
+</body>
+</html>
