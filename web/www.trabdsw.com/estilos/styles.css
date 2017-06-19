@@ -195,3 +195,75 @@ div {
     width: 25px;
 }
 
+#linha-login {
+    display: flex;
+    height: 20%;
+}
+
+#caixa-nome-sistema {
+    display: flex;
+    width: 80%;
+}
+
+#caixa-nome-sistema h1{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#caixa-login {
+    width: 20%;
+    padding: 5px;
+    margin-left: auto;
+}
+
+#cabecalho-login {
+    text-align: center;
+    padding: 5px;
+}
+
+#caixa-enviar-login{
+    display: flex;
+    padding: 5px;
+}
+
+#btn-login {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#linha-img-login {
+    display: flex;
+}
+
+#img-login {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#caixa-usuario,
+#caixa-senha {
+    display: flex;
+    padding-left: 5px;
+    padding-right: 5px;
+
+}
+
+#caixa-usuario input,
+#caixa-senha input {
+    padding: 3px;
+    width: 100%;
+}
+
+#caixa-usuario label,
+#caixa-senha label {
+    margin-right: 5px;
+}
+
+#caixa-remember {
+    padding: 5px;
+}
+
+
+

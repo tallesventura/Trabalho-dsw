@@ -38,27 +38,38 @@
     echo Constructor::getInstance()->getHead();
 ?>
 
-<body>
-<div id="caixa-login">
-    <div id="cabecalho-login">
-        <label>Login</label>
+<body id="corpo-login">
+    <div id="linha-login">
+        <div id="caixa-nome-sistema">
+            <h1>Sistema de gerenciamento de pacientes</h1>
+        </div>
+        <div id="caixa-login">
+            <div id="cabecalho-login">
+                <label>Login</label>
+            </div>
+            <form method="POST" action="login/login.php">
+                <div id="caixa-usuario">
+                    <!-- <label for="usuario">Usuario</label> -->
+                    <input id="usuario" type="text" name="usuario" placeholder="Usuario">
+                </div>
+                <div id="caixa-senha">
+                    <!-- <label for="senha">Senha</label> -->
+                    <input id="senha" type="password" name="senha" placeholder="Senha">
+                </div>
+                <div id="caixa-enviar-login">
+                    <input id="btn-login" type="submit" name="enviar" value="Entrar">
+                </div>
+                <div id="caixa-remember">
+                    <input id="remember" type="checkbox" name="remember" value="remember">
+                    <label>Permanecer conectado</label>
+                </div>
+            </form>
+        </div>
     </div>
-    <form method="POST" action="login/login.php">
-        <div id="caixa-usuario">
-            <label for="usuario">Usuario</label>
-            <input id="usuario" type="text" name="usuario" placeholder="Usuario">
-        </div>
-        <div id="caixa-senha">
-            <label for="senha">Senha</label>
-            <input id="senha" type="password" name="senha" placeholder="Senha">
-        </div>
-        <div id="caixa-remember">
-            <input id="remember" type="checkbox" name="remember" value="remember">
-            <label>Manter-se conectado</label>
-        </div>
-        <input type="submit" name="enviar">
-    </form>
-</div>
+
+    <div id="linha-img-login">
+        <img id="img-login" src="imagens/medicos.png">
+    </div>
 
 </body>
 </html>
