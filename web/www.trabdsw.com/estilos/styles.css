@@ -197,12 +197,13 @@ div {
 
 #linha-login {
     display: flex;
-    height: 20%;
+    background-color: #449ca2;
 }
 
 #caixa-nome-sistema {
     display: flex;
     width: 80%;
+    color: #f2f2f2;
 }
 
 #caixa-nome-sistema h1{
@@ -215,6 +216,8 @@ div {
     width: 20%;
     padding: 5px;
     margin-left: auto;
+    background-color: #07889B;
+    color: #f2f2f2;
 }
 
 #cabecalho-login {
@@ -233,8 +236,13 @@ div {
     margin-right: auto;
 }
 
+#corpo-login{
+    background-color: #66B9BF;
+}
+
 #linha-img-login {
     display: flex;
+    background-color: #66B9BF;
 }
 
 #img-login {
