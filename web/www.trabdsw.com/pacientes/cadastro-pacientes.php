@@ -1,5 +1,7 @@
 
 <?php
+if (!isset($_SESSION)) { session_start(); }
+
 require '../login/verifica_sessao.php'
 ?>
 
@@ -25,7 +27,7 @@ require '../login/verifica_sessao.php'
       $(function(){
         $('#sair').click(function(){
           $.get('../login/deslogar.php',function(data){
-            window.location.replace('../index.php');
+            window.location.replace(<?php ROOTDIR.'index.php' ?>);
           });
         })
       })

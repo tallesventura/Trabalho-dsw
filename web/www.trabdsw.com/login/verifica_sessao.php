@@ -1,8 +1,8 @@
 <?php
+if (!isset($_SESSION)) { session_start(); }
 
 include_once '../config.php';
 
-session_start();
 $logado = false;
 if(!isset($_SESSION['user_name'])){
 

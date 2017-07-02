@@ -1,9 +1,10 @@
 <?php
 
+    if (!isset($_SESSION)) { session_start(); }
+
     include_once 'config.php';
     include_once 'constructor.php';
 
-    session_start();
     if(isset($_COOKIE['auth_key'])){
         $key = $_COOKIE['auth_key'];
 

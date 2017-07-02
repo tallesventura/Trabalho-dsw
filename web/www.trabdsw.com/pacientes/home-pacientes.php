@@ -1,15 +1,36 @@
-
 <?php
+if (!isset($_SESSION)) { session_start(); }
 
 include_once '../constructor.php';
+include_once '../config.php';
 require '../login/verifica_sessao.php';
-$pacientes = array(
-    array("nome"=>"Talles", "foto"=>"http://via.placeholder.com/75x75"),
-    array("nome"=>"Fulano", "foto"=>"http://via.placeholder.com/75x75"),
-    array("nome"=>"Ciclano", "foto"=>"http://via.placeholder.com/75x75"),
-    array("nome"=>"Josiclano", "foto"=>"http://via.placeholder.com/75x75"),
-    array("nome"=>"João", "foto"=>"http://via.placeholder.com/75x75"),
-    array("nome"=>"José", "foto"=>"http://via.placeholder.com/75x75"));
+
+// abrindo a conexão com o banco
+$con = mysqli_connect(  DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME );
+$query = "SELECT * FROM `pacientes` ORDER BY `nome`";
+$result = mysqli_query($con, $query);
+
+$pacientes = array();
+
+// pegando a lista de pacientes no banco
+while( $p = mysqli_fetch_array($result)){
+    $endr = $p["rua"] . ', ' . $p["numero"] . ', ' . $p["bairro"] .
+        ', ' . $p["cidade"] . ' - ' . $p["estado"];
+    array_push($pacientes, array(
+            "nome" => $p["nome"],
+            "sexo" => $p["sexo"],
+            "nascimento" => $p["nascimento"],
+            "telefone" => $p["telefone"],
+            "endereco" => $endr,
+            "observacoes" => $p["observacoes"]
+            ));
+}
+
+// fechando a conexão com o banco
+mysqli_close($con);
+
+$count = 0;
+
 ?>
 
 <html>
@@ -20,18 +41,37 @@ $pacientes = array(
     $c->addCSS('../libs/css/normalize.css');
     $c->addCSS('../estilos/styles.css');
 
+    // Adicionando o script de deslogar
     $c->addExtra(
         "<script type='text/javascript'>
             $(function(){
                 $('#sair').click(function(){
-                    $.get('../login/deslogar.php',function(data){
-                        window.location.replace('../index.php');
-                    });
+                    if(confirm('Tem certeza de que deseja se deslogar?')){
+                        $.get('../login/deslogar.php',function(data){
+                            window.location.replace('".ROOTDIR."index.php');
+                        });
+                    }
+                });
+            });
 
-                })
-            })
+            function allowDrop(ev) {
+                ev.preventDefault();
+                ev.dataTransfer.dropEffetc = 'move';
+            }
+
+            function drag(ev) {
+                ev.dataTransfer.setData('text', ev.target.id);
+                ev.dropEffetc = 'move';
+            }
+
+            function drop(ev, element) {
+                ev.preventDefault();
+                var data = ev.dataTransfer.getData('text');
+                element.before(document.getElementById(data));
+            }
         </script>"
     );
+
 
     echo Constructor::getInstance()->getHead();
 ?>
@@ -56,8 +96,8 @@ $pacientes = array(
         <div id="barra-lateral">
 
             <div id="cabecalho-barra-lateral">
-                <p>Bem vindo, Fulano.</p>
-                <p id="data">Quinta-feira, 1 de Junho de 2017</p>
+                <p>Bem vindo, <?php echo $_SESSION['user_name'] ?>.</p>
+                <p id="data"><?php echo date("l, d/m/Y") ?></p>
             </div>
             <div id="caixa-pesquisa">
                 <label for="nomePaciente">Pesquisar:</label>
@@ -69,19 +109,21 @@ $pacientes = array(
         <div id="coluna-pacientes">
             <?php foreach($pacientes as $paciente): ?>
                 <!-- Paciente -->
-                <div class="caixa-paciente">
+                <div id="<?php echo $count++ ?>" class="caixa-paciente" draggable="true" ondragstart="drag(event)"
+                    ondrop="drop(event, this)" ondragover="allowDrop(event)">
                     <!-- cabeçalho -->
-                    <div class="cabecalho-paciente">
+                    <div class="cabecalho-paciente" draggable="false">
                         <!-- menu -->
-                        <div class="menu-paciente">
+                        <div class="menu-paciente" draggable="false">
                             <!-- nome -->
-                            <div class="caixa-nome-paciente">
+                            <div class="caixa-nome-paciente" draggable="false">
                                 <label> <?php echo $paciente["nome"]; ?> </label>
                             </div>
                             <!-- ações -->
-                            <div class="barra-acoes-paciente">
-                                <button class="btn-paciente"> <img src="../imagens/editar.svg" alt="Editar"></button>
-                                <button class="btn-paciente"> <img src="../imagens/remover.svg" alt="Excluir"></button>
+                            <div class="barra-acoes-paciente" draggable="false">
+                                <button class="btn-paciente" title="Editar" draggable="false"> <img src="../imagens/editar.svg" alt="Editar" draggable="false"></button>
+                                <button class="btn-paciente" title="Excluir" draggable="false"> <img src="../imagens/remover.svg" alt="Excluir" draggable="false"></button>
+                                <button class="btn-paciente" title="Visualizar" draggable="false"> <img src="../imagens/visualizar.svg" alt="Visualizar" draggable="false"></button>
                             </div>
                         </div>
                         <!-- foto -->
@@ -91,10 +133,11 @@ $pacientes = array(
                     </div>
                     <!-- corpo -->
                     <div class="corpo-paciente">
-                        <label>Telefone:</label><br>
-                        <label>Endereço:</label><br>
-                        <label>Email:</label><br>
-                        <label>Observações:</label><br>
+                        <label>Sexo: <?php echo $paciente["sexo"] ?></label><br>
+                        <label>Nascimento: <?php echo $paciente["nascimento"] ?></label><br>
+                        <label>Telefone: <?php echo $paciente["telefone"] ?></label><br>
+                        <label>Endereço: <?php echo $paciente["endereco"] ?></label><br>
+                        <label>Observações: <?php echo $paciente["observacoes"] ?></label><br>
                     </div>
                 </div>
 

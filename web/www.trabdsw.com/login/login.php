@@ -1,4 +1,5 @@
 <?php
+if (!isset($_SESSION)) { session_start(); }
 
 include_once '../config.php';
 
@@ -14,7 +15,7 @@ $senha = htmlspecialchars( str_replace( "'", "", str_replace('"', '', $senha) ) 
 // verifica se login ou senha estão vazios
 if($usuario != "" && $senha != ""){
     $senha = hash('sha256',$senha); //faz o hash da senha
-    session_start();
+
 
     // Inicia a conexão com o banco
     $con = mysqli_connect(  DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME );
@@ -28,7 +29,6 @@ if($usuario != "" && $senha != ""){
             $uID = $u['id'];
             $nome = $u['nome'];
 
-            session_start();
             $_SESSION['user_id'] = $uID;
             $_SESSION['user_name'] = $nome;
 
@@ -54,10 +54,10 @@ if($usuario != "" && $senha != ""){
     }
 
     //fecha a conexão com o banco
-    mysqli_close($con);
 
     if($logado){
-        header("location: ".ROOTDIR."/pacientes/home-pacientes.php");
+        header("location: ".ROOTDIR."pacientes/home-pacientes.php");
+        mysqli_close($con);
         exit;
     }else{
         header("location: ". ROOTDIR. "index.php");

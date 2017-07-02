@@ -1,8 +1,8 @@
 <?php
 
-include_once '../config.php';
+if (!isset($_SESSION)) { session_start(); }
 
-session_start();
+include_once '../config.php';
 
 // destrói o cookie
 setcookie('auth_key', "", time() - 3600);
