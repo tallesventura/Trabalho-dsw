@@ -17,6 +17,7 @@ while( $p = mysqli_fetch_array($result)){
     $endr = $p["rua"] . ', ' . $p["numero"] . ', ' . $p["bairro"] .
         ', ' . $p["cidade"] . ' - ' . $p["estado"];
     array_push($pacientes, array(
+            "id" => $p["id"],
             "nome" => $p["nome"],
             "sexo" => $p["sexo"],
             "nascimento" => $p["nascimento"],
@@ -87,6 +88,7 @@ $count = 0;
         <ul>
             <li><a href="home-pacientes.php">Página inicial</a></li>
             <li><a href="cadastro-pacientes.php">Cadastrar pacientes</a></li>
+            <li><a href="paciente_exibir.php">Exibir pacientes</a></li>
             <li id="sair" style="float:right"><a href="#">Sair</a></li>
         </ul>
     </div>
@@ -134,11 +136,12 @@ $count = 0;
                     </div>
                     <!-- corpo -->
                     <div class="corpo-paciente">
-                        <label>Sexo: <?php echo $paciente["sexo"] ?></label><br>
-                        <label>Nascimento: <?php echo $paciente["nascimento"] ?></label><br>
-                        <label>Telefone: <?php echo $paciente["telefone"] ?></label><br>
-                        <label>Endereço: <?php echo $paciente["endereco"] ?></label><br>
-                        <label>Observações: <?php echo $paciente["observacoes"] ?></label><br>
+                        <label id="id_paciente">ID: <?php echo $paciente["id"] ?></label><br>
+                        <label id="sexo">Sexo: <?php echo $paciente["sexo"] ?></label><br>
+                        <label id="nascimento">Nascimento: <?php echo $paciente["nascimento"] ?></label><br>
+                        <label id="telefone">Telefone: <?php echo $paciente["telefone"] ?></label><br>
+                        <label id="endereco">Endereço: <?php echo $paciente["endereco"] ?></label><br>
+                        <label id="observacoes">Observações: <?php echo $paciente["observacoes"] ?></label><br>
                     </div>
                 </div>
 
