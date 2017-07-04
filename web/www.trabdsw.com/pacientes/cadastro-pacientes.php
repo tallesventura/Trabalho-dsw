@@ -26,9 +26,13 @@ require '../login/verifica_sessao.php'
    <script type="text/javascript">
       $(function(){
         $('#sair').click(function(){
-          $.get('../login/deslogar.php',function(data){
-            window.location.replace(<?php ROOTDIR.'index.php' ?>);
-          });
+          //alert("Entrou no click");
+          if(confirm('Tem certeza de que deseja se deslogar?')){
+            $.get('../login/deslogar.php',function(data){
+              //alert("entrou no get");
+              window.location.replace("<?php echo ROOTDIR.'index.php' ?>");
+            });
+          }
         })
       })
    </script>

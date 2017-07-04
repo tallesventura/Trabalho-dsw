@@ -106,18 +106,24 @@ div {
 }
 
 .menu-paciente {
-    flex-basis: 80%;
-    position: relative;
+    flex-basis: 100%;
+    /*position: relative;*/
 }
 
 .barra-acoes-paciente {
-    position: absolute;
-    bottom: 5px;
+    /*position: absolute;
+    bottom: 5px;*/
+    margin-top: 10px;
 }
 
 .caixa-nome-paciente {
-    position: absolute;
-    top: 5px;
+    /*position: absolute;
+    top: 5px;*/
+    text-align: center;
+}
+
+.caixa-nome-paciente label {
+    font-size: large;
 }
 
 .foto-paciente {

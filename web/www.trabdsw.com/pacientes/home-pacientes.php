@@ -72,7 +72,7 @@ $count = 0;
         </script>"
     );
 
-
+    // gerando a <head>
     echo Constructor::getInstance()->getHead();
 ?>
 
@@ -126,10 +126,11 @@ $count = 0;
                                 <button class="btn-paciente" title="Visualizar" draggable="false"> <img src="../imagens/visualizar.svg" alt="Visualizar" draggable="false"></button>
                             </div>
                         </div>
-                        <!-- foto -->
+                        <!-- foto
                         <div>
                             <img class="foto-paciente" src="<?php echo $paciente['foto'] ?>" alt="Foto do paciente">
                         </div>
+                        -->
                     </div>
                     <!-- corpo -->
                     <div class="corpo-paciente">
