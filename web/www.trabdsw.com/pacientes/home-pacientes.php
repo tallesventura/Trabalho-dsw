@@ -39,6 +39,7 @@ $count = 0;
 <?php
     $c = Constructor::getInstance();
     $c->addJavaScript('../libs/jquery/jquery-3.2.1.min.js');
+    $c->addJavaScript('js/acoes_paciente.js');
     $c->addCSS('../libs/css/normalize.css');
     $c->addCSS('../estilos/styles.css');
 
@@ -53,6 +54,8 @@ $count = 0;
                         });
                     }
                 });
+
+                $('#coluna-pacientes').load('carrega-pacientes.php');
             });
 
             function allowDrop(ev) {
@@ -109,43 +112,7 @@ $count = 0;
         </div>
 
         <div id="coluna-pacientes">
-            <?php foreach($pacientes as $paciente): ?>
-                <!-- Paciente -->
-                <div id="<?php echo $count++ ?>" class="caixa-paciente" draggable="true" ondragstart="drag(event)"
-                    ondrop="drop(event, this)" ondragover="allowDrop(event)">
-                    <!-- cabeçalho -->
-                    <div class="cabecalho-paciente" draggable="false">
-                        <!-- menu -->
-                        <div class="menu-paciente" draggable="false">
-                            <!-- nome -->
-                            <div class="caixa-nome-paciente" draggable="false">
-                                <label> <?php echo $paciente["nome"]; ?> </label>
-                            </div>
-                            <!-- ações -->
-                            <div class="barra-acoes-paciente" draggable="false">
-                                <button class="btn-paciente" title="Editar" draggable="false"> <img src="../imagens/editar.svg" alt="Editar" draggable="false"></button>
-                                <button class="btn-paciente" title="Excluir" draggable="false"> <img src="../imagens/remover.svg" alt="Excluir" draggable="false"></button>
-                                <button class="btn-paciente" title="Visualizar" draggable="false"> <img src="../imagens/visualizar.svg" alt="Visualizar" draggable="false"></button>
-                            </div>
-                        </div>
-                        <!-- foto
-                        <div>
-                            <img class="foto-paciente" src="<?php echo $paciente['foto'] ?>" alt="Foto do paciente">
-                        </div>
-                        -->
-                    </div>
-                    <!-- corpo -->
-                    <div class="corpo-paciente">
-                        <label id="id_paciente">ID: <?php echo $paciente["id"] ?></label><br>
-                        <label id="sexo">Sexo: <?php echo $paciente["sexo"] ?></label><br>
-                        <label id="nascimento">Nascimento: <?php echo $paciente["nascimento"] ?></label><br>
-                        <label id="telefone">Telefone: <?php echo $paciente["telefone"] ?></label><br>
-                        <label id="endereco">Endereço: <?php echo $paciente["endereco"] ?></label><br>
-                        <label id="observacoes">Observações: <?php echo $paciente["observacoes"] ?></label><br>
-                    </div>
-                </div>
 
-            <?php endforeach; ?>
         </div>
 
     </div>

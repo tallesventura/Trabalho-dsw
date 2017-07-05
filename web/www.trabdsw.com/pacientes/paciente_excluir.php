@@ -16,7 +16,6 @@ require '../login/verifica_sessao.php';
 <?php
 
  $id = $_GET['id'];
- include("conexao.php");
 
  $conn = mysqli_connect(  DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME );
  $sql = "DELETE FROM pacientes WHERE id = $id";
