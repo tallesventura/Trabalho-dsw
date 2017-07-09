@@ -3,10 +3,12 @@ function excluir_paciente(elemento){
     var div_paciente = $(elemento).parent().parent().parent().parent();
     var id = $(div_paciente).find(".id_paciente").text();
 
-    $.get("paciente_excluir.php", {"id": id}, function(data,status){
-        $("#coluna-pacientes").empty();
-        $("#coluna-pacientes").load('carrega-pacientes.php');
-    });
+    if(confirm("Tem certeza que deseja excluir o paciente?")){
+        $.get("paciente_excluir.php", {"id": id}, function(data,status){
+            $("#coluna-pacientes").empty();
+            $("#coluna-pacientes").load('carrega-pacientes.php');
+        });
+    }
 }
 
 function editar_paciente(elemento){

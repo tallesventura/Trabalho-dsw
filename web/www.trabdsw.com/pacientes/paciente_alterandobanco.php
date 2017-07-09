@@ -15,6 +15,8 @@ require '../login/verifica_sessao.php'
 
   <style type="text/css">
     body {
+
+
       background-color: #66B9BF;
       background-image: url();
     }
@@ -68,4 +70,5 @@ require '../login/verifica_sessao.php'
 
 
 </body>
-<!-- InstanceEnd --></html>
+<!-- InstanceEnd -->
+</html>

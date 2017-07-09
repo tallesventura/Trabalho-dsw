@@ -64,13 +64,13 @@ mysqli_close($conn);
                 <tr>  <td> Data de Nascimento </td> <td><?php echo "$nascimento"; ?></td></tr>
                 <tr>  <td> Sexo </td> <td><?php echo "$sexo"; ?></td></tr>
                <tr>  <td> Informações </td> <td><textarea cols=40 rows=2><?php echo "$observacoes"; ?></textarea> </td></tr>
-				<tr>  <td> Sexo </td> <td><?php echo "$sexo"; ?></td></tr>
+				<tr>  <td> Telefone </td> <td><?php echo "$telefone"; ?></td></tr>
                 <tr>  <td> Endereço </td><td>Estado: <?php echo "$estado"; ?><br>
                                               Cidade: <?php echo "$cidade"; ?><br>
 				                              Bairro: <?php echo "$bairro"; ?> <br>
 					                            Rua:  <?php echo "$rua"; ?><br>
 					                          Numero: <?php echo "$numero"; ?>
-					                          Telefone: <?php echo "$telefone"; ?>
+					                         
 </table>
 <br>
 <script>alert("Paciente cadastrado com sucesso!");</script>

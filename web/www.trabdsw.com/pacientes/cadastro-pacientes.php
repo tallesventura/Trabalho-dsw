@@ -1,4 +1,3 @@
-
 <?php
 if (!isset($_SESSION)) { session_start(); }
 
@@ -8,7 +7,7 @@ require '../login/verifica_sessao.php'
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
     <title>Cadastro de Pacientes</title>
     <link rel="stylesheet" type="text/css" href="../estilos/styles.css">
 
@@ -58,7 +57,7 @@ require '../login/verifica_sessao.php'
 
     <div class="barra-nav">
         <ul>
-            <li><a href="home-pacientes.php">Página inicial</a></li>
+            <li><a href="home-pacientes.php">PÃ¡gina inicial</a></li>
             <li><a href="cadastro-pacientes.php">Cadastrar pacientes</a></li>
             <li><a href="paciente_exibir.php">Exibir pacientes</a></li>
             <li id="sair" style="float:right"><a href="#">Sair</a></li>
@@ -69,11 +68,7 @@ require '../login/verifica_sessao.php'
 
       <form name ="cadastro_paciente" method ="POST" action ="paciente_incluindobanco.php" >
         <p>&nbsp;</p>
-        <table width="575" height="27" border="0" align="center">
-          <tr>
-            <td width="261" align="center"><a href="paciente_exibir.php">Exibir</a></td>
-          </tr>
-        </table>
+      
 
         <p>&nbsp;</p>
         <table width="500" cellpadding="5"  border="1" bordercolor="black" align="center" >
@@ -81,12 +76,12 @@ require '../login/verifica_sessao.php'
 
           <tr>  <td><label> Nome Completo </label></td> <td><input type="text" name="nome" size="60" value=""></td></tr>
           <tr>  <td><label> RG </label></td> <td align="left"><input type="text" name="rg"  size = "10"  value=""></td></tr>
-          <tr>  <td> CPF  </td> <td align="left"><input type="text" name="cpf" value="" maxlength="14" onKeyUp="mascararCpf(this);"> (Somente números) </td></tr>
+          <tr>  <td> CPF  </td> <td align="left"><input type="text" name="cpf" value="" maxlength="14" onKeyUp="mascararCpf(this);"> (Somente nÃºmeros) </td></tr>
           <tr>  <td> Data de Nascimento </td> <td align="left"><input type="text" name="nascimento"  value="dd/mm/aaaa" maxlength="10" onKeyUp="mascararData(this);"  ></td></tr>
-          <tr>  <td> Informações </td > <td><textarea name="info" cols=40 rows=2></textarea></td></tr>
+          <tr>  <td> InformaÃ§Ãµes </td > <td><textarea name="info" cols=40 rows=2></textarea></td></tr>
           <tr>  <td> Sexo </td> <td><INPUT TYPE="RADIO" NAME="sexo" VALUE="M"> Masculino <INPUT TYPE="RADIO" NAME="sexo" VALUE="F"> Feminino</td></tr>
-          <tr> <td>Telefone: </td> <td> <input type = "text" name="telefone" value="" maxlength="14" onKeyUp="mascararTelefone(this);"  >(somente numeros)</td> </tr>
-          <tr><td> Endereço</td> <th colspan="6" ALIGN="left">
+          <tr> <td>Telefone: </td> <td> <input type = "text" name="telefone" value="" maxlength="14" onKeyUp="mascararTelefone(this);"  >(somente nÃºmeros)</td> </tr>
+          <tr><td> EndereÃ§o</td> <th colspan="6" ALIGN="left">
            <p>
              <label>Estado</label>
              :
@@ -103,7 +98,7 @@ require '../login/verifica_sessao.php'
 
               Bairro: <input name="bairro" type = "text" size = "30"  value=""><br>
               Rua:  <input name="rua" type = "text" size = "50"  value=""><br>
-              Número: <input name="numero" type = "text" size = "5"  value="">
+              NÃºmero: <input name="numero" type = "text" size = "5"  value="">
             </p>
           </th>
         </tr>
