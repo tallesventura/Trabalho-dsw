@@ -1,3 +1,14 @@
+$(function(){
+    $('#nomePaciente').keyup(function(){
+        var query = $("#nomePaciente").val();
+        $("#coluna-pacientes").empty();
+        $.get('carrega-pacientes.php', {"name": query}, function(data){
+            //alert(data);
+            $("#coluna-pacientes").html(data);
+        });
+    });
+});
+
 function excluir_paciente(elemento){
 
     var div_paciente = $(elemento).parent().parent().parent().parent();

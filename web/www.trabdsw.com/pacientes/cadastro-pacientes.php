@@ -68,7 +68,7 @@ require '../login/verifica_sessao.php'
 
       <form name ="cadastro_paciente" method ="POST" action ="paciente_incluindobanco.php" >
         <p>&nbsp;</p>
-      
+
 
         <p>&nbsp;</p>
         <table width="500" cellpadding="5"  border="1" bordercolor="black" align="center" >
@@ -77,7 +77,7 @@ require '../login/verifica_sessao.php'
           <tr>  <td><label> Nome Completo </label></td> <td><input type="text" name="nome" size="60" value=""></td></tr>
           <tr>  <td><label> RG </label></td> <td align="left"><input type="text" name="rg"  size = "10"  value=""></td></tr>
           <tr>  <td> CPF  </td> <td align="left"><input type="text" name="cpf" value="" maxlength="14" onKeyUp="mascararCpf(this);"> (Somente números) </td></tr>
-          <tr>  <td> Data de Nascimento </td> <td align="left"><input type="text" name="nascimento"  value="dd/mm/aaaa" maxlength="10" onKeyUp="mascararData(this);"  ></td></tr>
+          <tr>  <td> Data de Nascimento </td> <td align="left"><input type="text" name="nascimento"  placeholder="dd/mm/aaaa" maxlength="10" onKeyUp="mascararData(this);"  ></td></tr>
           <tr>  <td> Informações </td > <td><textarea name="info" cols=40 rows=2></textarea></td></tr>
           <tr>  <td> Sexo </td> <td><INPUT TYPE="RADIO" NAME="sexo" VALUE="M"> Masculino <INPUT TYPE="RADIO" NAME="sexo" VALUE="F"> Feminino</td></tr>
           <tr> <td>Telefone: </td> <td> <input type = "text" name="telefone" value="" maxlength="14" onKeyUp="mascararTelefone(this);"  >(somente números)</td> </tr>

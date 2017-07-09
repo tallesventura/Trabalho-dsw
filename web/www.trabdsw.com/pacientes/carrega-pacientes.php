@@ -5,7 +5,12 @@ include_once '../config.php';
 
 // abrindo a conexão com o banco
 $con = mysqli_connect(  DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME );
-$query = "SELECT * FROM `pacientes` ORDER BY `nome`";
+if(isset($_GET["name"])){
+    $nome_pesq = $_GET["name"];
+    $query = "SELECT * FROM `pacientes` WHERE `nome` LIKE '%$nome_pesq%' ORDER BY `nome`";
+}else{
+    $query = "SELECT * FROM `pacientes` ORDER BY `nome`";
+}
 $result = mysqli_query($con, $query);
 
 $pacientes = array();
