@@ -1,0 +1,61 @@
+div {
+    outline: red solid 1px;
+    box-sizing: border-box;
+}
+
+#container {
+    display: flex;
+    padding: 15px;
+    justify-content: center;
+}
+
+#container-mensagens {
+    flex-basis: 40%;
+}
+
+#container-mensagens > div {
+    padding: 7px 5px;
+}
+
+#cabecalho-msg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#caixa-img-cabecalho-msg {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+#titulo-cabecalho-msg {
+    display: inline-block;
+}
+
+.mensagem {
+    display: flex;
+    align-items: center;
+}
+
+.caixa-img-msg {
+    display: inline-block;
+    flex-basis: 10%;
+    margin-right: 15px;
+}
+
+.caixa-img-msg > img{
+    height: 50;
+    width: 60;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.corpo-msg {
+    flex-basis: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.remetente {
+    font-weight: bold;
+}

@@ -68,6 +68,7 @@ require '../login/verifica_sessao.php';
             <li><a href="home-pacientes.php">Página inicial</a></li>
             <li><a href="cadastro-pacientes.php">Cadastrar pacientes</a></li>
             <li><a href="paciente_exibir.php">Exibir pacientes</a></li>
+            <li><a href="../mensagens/mensagens.php">Mensagens</a></li>
             <li id="sair" style="float:right"><a href="#">Sair</a></li>
         </ul>
     </div>
