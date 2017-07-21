@@ -1,5 +1,5 @@
 div {
-    outline: red solid 1px;
+    /*outline: red solid 1px;*/
     box-sizing: border-box;
 }
 
@@ -17,10 +17,21 @@ div {
     padding: 7px 5px;
 }
 
+#caixa-mensagens {
+    background-color: #66B9BF;
+    border-radius: 0px 0px 5px 5px;
+}
+
 #cabecalho-msg{
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #07889B;
+}
+
+#barra-acoes-msg {
+    background-color: #449ca2;
+    border-radius: 5px 5px 0px 0px;
 }
 
 #caixa-img-cabecalho-msg {
@@ -30,6 +41,18 @@ div {
 
 #titulo-cabecalho-msg {
     display: inline-block;
+}
+
+#btn-nova-msg {
+    border-radius: 5px;
+}
+
+#caixa-acoes-msg {
+    padding: 3px;
+}
+
+#caixa-acoes-msg > button {
+    border-radius: 5px;
 }
 
 .mensagem {
